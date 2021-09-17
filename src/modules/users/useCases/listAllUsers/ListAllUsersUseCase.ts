@@ -15,7 +15,7 @@ class ListAllUsersUseCase {
       throw new Error("Usuário não encontrado");
     }
 
-    if(id.admin == false) {
+    if(id.admin === false) {
       throw new Error("Sem permissão");
     }
 
