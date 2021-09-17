@@ -15,12 +15,13 @@ class ListAllUsersUseCase {
       throw new Error("Usuário não encontrado");
     }
 
-    if(id.admin === false) {
+    if(!id.admin) {
       throw new Error("Sem permissão");
     }
 
-    return this.usersRepository.list();
+    const users = this.usersRepository.list();
 
+    return users;
   }
 }
 
